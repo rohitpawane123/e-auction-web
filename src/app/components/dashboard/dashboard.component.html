@@ -1,1 +1,259 @@
-<p>dashboard works!</p>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="container">
+                <div class="d-flex flex-lg-row flex-md-row flex-sm-column flex-column">
+                    <div class="d-flex col-lg-4 col-md-4 col-sm-12 col-12 justify-content-lg-start justify-content-md-start justify-content-sm-center justify-content-center p-3">
+                        <label for="Logo"><strong >E - AUCTION</strong></label>
+                    </div>
+                    <div class="d-flex col-lg-8 col-md-8 col-sm-12 col-12 justify-content-lg-start justify-content-md-start justify-content-sm-center justify-content-center">
+                        <label for="fetch-details" class="form-label">Fetch Details</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="d-flex flex-lg-row flex-md-row flex-sm-column flex-column">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 text-center">
+                        <label for="product" class="form-label">Product</label>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 text-center">
+                        <select id="textSelect" class="select form-label col-12 sltht36" *ngFor="let option of options">
+                            <option value="{{option.Id}}">{{option.Value}}</option>
+                    </select>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 text-center">
+                        <button type="button" class="btn btn-primary pd5 wd116">GET</button>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex p-4"></div>
+            <div class="container">
+                <div class="d-flex flex-lg-row flex-md-row flex-sm-column flex-column">
+                    <div class="d-flex col-lg-4 col-md-4 col-sm-12 col-12 ps-lg-3 ps-md-3">
+                        <label for="prd-nm" class="form-label">Product Name</label>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-12">
+                        <mdb-form-control class="col-lg-10 col-md-10">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Product Name</label>
+                        </mdb-form-control>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="d-flex flex-lg-row flex-md-row flex-sm-column flex-column pt-4">
+                    <div class="d-flex col-lg-4 col-md-4 col-sm-12 col-12 ps-lg-3 ps-md-3">
+                        <label for="prd-nm" class="form-label">Short Description</label>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-12">
+                        <mdb-form-control class="col-lg-10 col-md-10">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Short Description</label>
+                        </mdb-form-control>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="d-flex flex-lg-row flex-md-row flex-sm-column flex-column pt-4">
+                    <div class="d-flex col-lg-4 col-md-4 col-sm-12 col-12 ps-lg-3 ps-md-3">
+                        <label for="prd-nm" class="form-label">Detailed Description</label>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-12">
+                        <mdb-form-control class="col-lg-10 col-md-10">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Detailed Description</label>
+                        </mdb-form-control>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="d-flex flex-lg-row flex-md-row flex-sm-column flex-column pt-4">
+                    <div class="d-flex col-lg-4 col-md-4 col-sm-12 col-12 ps-lg-3 ps-md-3">
+                        <label for="prd-nm" class="form-label">Category</label>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-12">
+                        <mdb-form-control class="col-lg-10 col-md-10">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Category</label>
+                        </mdb-form-control>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="d-flex flex-lg-row flex-md-row flex-sm-column flex-column pt-4">
+                    <div class="d-flex col-lg-4 col-md-4 col-sm-12 col-12 ps-lg-3 ps-md-3">
+                        <label for="prd-nm" class="form-label">Starting Price</label>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-12">
+                        <mdb-form-control class="col-lg-10 col-md-10">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Starting Price</label>
+                        </mdb-form-control>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container">
+                <div class="d-flex flex-lg-row flex-md-row flex-sm-column flex-column pt-4">
+                    <div class="d-flex col-lg-4 col-md-4 col-sm-12 col-12 ps-lg-3 ps-md-3">
+                        <label for="prd-nm" class="form-label">Bid End Date</label>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-12">
+                        <mdb-form-control class="col-lg-10 col-md-10">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Bid End Date</label>
+                        </mdb-form-control>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="d-flex flex-row pt-4 justify-content-center">
+                    <label for="bids" class="form-label"> <strong>BIDS</strong> </label>
+                </div>
+            </div>
+
+
+            <div class="container">
+                <div class="d-flex flex-lg-row flex-md-row flex-sm-column flex-column ">
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-center">
+                        <label for="bid-amount">Bid Amount</label>
+                    </div>
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-center">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-center">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-center">
+                        <label for="mobile">Mobile</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container">
+                <div class="d-flex flex-lg-row flex-md-row flex-sm-column flex-column justify-content-lg-center justify-content-md-center">
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-lg-center justify-content-md-center py-2">
+                        <mdb-form-control class="col-lg-10 col-md-10 col-sm-12 col-12">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Bid Amount</label>
+                        </mdb-form-control>
+                    </div>
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-lg-center justify-content-md-center py-2">
+                        <mdb-form-control class="col-lg-10 col-md-10 col-sm-12 col-12">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Name</label>
+                        </mdb-form-control>
+                    </div>
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-lg-center justify-content-md-center py-2">
+                        <mdb-form-control class="col-lg-10 col-md-10 col-sm-12 col-12">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Email</label>
+                        </mdb-form-control>
+                    </div>
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-lg-center justify-content-md-center py-2">
+                        <mdb-form-control class="col-lg-10 col-md-10 col-sm-12 col-12">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Mobile</label>
+                        </mdb-form-control>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="d-flex flex-lg-row flex-md-row flex-sm-column flex-column justify-content-lg-center justify-content-md-center">
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-lg-center justify-content-md-center py-2">
+                        <mdb-form-control class="col-lg-10 col-md-10 col-sm-12 col-12">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Bid Amount</label>
+                        </mdb-form-control>
+                    </div>
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-lg-center justify-content-md-center py-2">
+                        <mdb-form-control class="col-lg-10 col-md-10 col-sm-12 col-12">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Name</label>
+                        </mdb-form-control>
+                    </div>
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-lg-center justify-content-md-center py-2">
+                        <mdb-form-control class="col-lg-10 col-md-10 col-sm-12 col-12">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Email</label>
+                        </mdb-form-control>
+                    </div>
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-lg-center justify-content-md-center py-2">
+                        <mdb-form-control class="col-lg-10 col-md-10 col-sm-12 col-12">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Mobile</label>
+                        </mdb-form-control>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="d-flex flex-lg-row flex-md-row flex-sm-column flex-column justify-content-lg-center justify-content-md-center">
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-lg-center justify-content-md-center py-2">
+                        <mdb-form-control class="col-lg-10 col-md-10 col-sm-12 col-12">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Bid Amount</label>
+                        </mdb-form-control>
+                    </div>
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-lg-center justify-content-md-center py-2">
+                        <mdb-form-control class="col-lg-10 col-md-10 col-sm-12 col-12">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Name</label>
+                        </mdb-form-control>
+                    </div>
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-lg-center justify-content-md-center py-2">
+                        <mdb-form-control class="col-lg-10 col-md-10 col-sm-12 col-12">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Email</label>
+                        </mdb-form-control>
+                    </div>
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-lg-center justify-content-md-center py-2">
+                        <mdb-form-control class="col-lg-10 col-md-10 col-sm-12 col-12">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Mobile</label>
+                        </mdb-form-control>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="d-flex flex-lg-row flex-md-row flex-sm-column flex-column justify-content-lg-center justify-content-md-center">
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-lg-center justify-content-md-center py-2">
+                        <mdb-form-control class="col-lg-10 col-md-10 col-sm-12 col-12">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Bid Amount</label>
+                        </mdb-form-control>
+                    </div>
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-lg-center justify-content-md-center py-2">
+                        <mdb-form-control class="col-lg-10 col-md-10 col-sm-12 col-12">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Name</label>
+                        </mdb-form-control>
+                    </div>
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-lg-center justify-content-md-center py-2">
+                        <mdb-form-control class="col-lg-10 col-md-10 col-sm-12 col-12">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Email</label>
+                        </mdb-form-control>
+                    </div>
+                    <div class="d-flex col-lg-3 col-md-3 col-sm-12 col-12 justify-content-lg-center justify-content-md-center py-2">
+                        <mdb-form-control class="col-lg-10 col-md-10 col-sm-12 col-12">
+                            <input mdbInput type="text" id="form1" class="form-control" />
+                            <label mdbLabel class="form-label" for="form1">Mobile</label>
+                        </mdb-form-control>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
