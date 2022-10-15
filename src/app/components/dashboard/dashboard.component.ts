@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { SellerServiceService } from 'src/app/services/seller-service.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private seller: SellerServiceService) {
+    this.seller.getAllSellerProducts().subscribe((res) => {
+      console.log('Service Result', [res]);
+    });
   }
+
+  ngOnInit(): void {}
 
   title = 'e-AuctionApp';
 
@@ -22,5 +25,4 @@ export class DashboardComponent implements OnInit {
     { Id: 5, Value: 'Product 5' },
     { Id: 6, Value: 'Product 6' },
   ];
-
 }
