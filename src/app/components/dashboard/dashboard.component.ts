@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BuyerServiceService } from 'src/app/services/buyer-service.service';
 import { SellerServiceService } from 'src/app/services/seller-service.service';
 
 export interface SellerProduct {
@@ -26,6 +27,14 @@ export interface productTable {
   productName: string;
 }
 
+export interface BuyerTableModel {
+  bidAmount: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+}
+
 export interface productList {
   productId: string;
   productName: string;
@@ -49,7 +58,14 @@ export class DashboardComponent implements OnInit {
 
   allBuyerProducts: productTable[] = [];
 
-  constructor(private seller: SellerServiceService) {
+  allBuyers: BuyerTableModel[] = [];
+
+  buyerVal: any;
+
+  constructor(
+    private seller: SellerServiceService,
+    private buyer: BuyerServiceService
+  ) {
     this.seller.getAllSellerProducts().subscribe((res) => {
       this.val = res;
       for (let index = 0; index < this.val.result.value.length; index++) {
@@ -66,6 +82,21 @@ export class DashboardComponent implements OnInit {
         });
       }
       //Object.assign(this.sprod, this.val.result.value[0]);
+    });
+
+    this.buyer.getAllBids().subscribe((res) => {
+      this.allBuyers = [];
+      this.buyerVal = res;
+      console.log('All Bids Data', [this.buyerVal.value]);
+      for (let index = 0; index < this.buyerVal.value.length; index++) {
+        this.allBuyers.push({
+          bidAmount: this.buyerVal.value[index].bidAmount,
+          email: this.buyerVal.value[index].email,
+          phone: this.buyerVal.value[index].phone,
+          firstName: this.buyerVal.value[index].firstName,
+          lastName: this.buyerVal.value[index].lastName,
+        });
+      }
     });
   }
 

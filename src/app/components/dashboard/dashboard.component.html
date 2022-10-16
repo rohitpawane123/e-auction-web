@@ -134,11 +134,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let prd of allBuyerProducts">
-                        <td>{{prd.productId}}</td>
-                        <td>{{prd.productName}}</td>
-                        <td>{{prd.address}}</td>
-                        <td>{{prd.bidEndDate}}</td>
+                    <tr *ngFor="let buyer of allBuyers">
+                        <td>{{buyer.bidAmount}}</td>
+                        <td>{{buyer.firstName}} {{buyer.lastName}}</td>
+                        <td>{{buyer.email}}</td>
+                        <td>{{buyer.phone}}</td>
                     </tr>
                 </tbody>
             </table>
