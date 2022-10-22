@@ -113,39 +113,42 @@
                 </div>
             </div>
 
-            <div class="container">
-                <div class="d-flex flex-row pt-4 justify-content-center">
-                    <label for="bids" class="form-label"> <strong>BIDS</strong> </label>
+
+
+            <div *ngIf="enableTable">
+
+                <div class="container">
+                    <div class="d-flex flex-row pt-4 justify-content-center">
+                        <label for="bids" class="form-label"> <strong>BIDS</strong> </label>
+                    </div>
+                </div>
+
+                <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th class="th-sm">Bid Amount
+                            </th>
+                            <th class="th-sm">Name
+                            </th>
+                            <th class="th-sm">Email
+                            </th>
+                            <th class="th-sm">Mobile
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let buyer of allBuyers | paginate:{itemsPerPage:3, currentPage:p}">
+                            <td>$ {{buyer.bidAmount}}</td>
+                            <td>{{buyer.firstName | titlecase}} {{buyer.lastName | titlecase}}</td>
+                            <td>{{buyer.email | lowercase}}</td>
+                            <td>{{buyer.phone}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagination d-flex justify-content-md-end">
+                    <pagination-controls (pageChange)="p= $event"></pagination-controls>
                 </div>
             </div>
-
-
-            <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                <thead>
-                    <tr>
-                        <th class="th-sm">Bid Amount
-                        </th>
-                        <th class="th-sm">Name
-                        </th>
-                        <th class="th-sm">Email
-                        </th>
-                        <th class="th-sm">Mobile
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let buyer of allBuyers | paginate:{itemsPerPage:3, currentPage:p}">
-                        <td>$ {{buyer.bidAmount}}</td>
-                        <td>{{buyer.firstName | titlecase}} {{buyer.lastName | titlecase}}</td>
-                        <td>{{buyer.email | lowercase}}</td>
-                        <td>{{buyer.phone}}</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="pagination d-flex justify-content-md-end">
-                <pagination-controls (pageChange)="p= $event"></pagination-controls>
-            </div>
-
         </div>
     </div>
 

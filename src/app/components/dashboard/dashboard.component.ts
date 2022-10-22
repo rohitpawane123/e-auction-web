@@ -64,6 +64,8 @@ export class DashboardComponent implements OnInit {
 
   p: any;
 
+  enableTable: boolean = false;
+
   constructor(
     private seller: SellerServiceService,
     private buyer: BuyerServiceService
@@ -86,20 +88,20 @@ export class DashboardComponent implements OnInit {
       //Object.assign(this.sprod, this.val.result.value[0]);
     });
 
-    this.buyer.getAllBids().subscribe((res) => {
-      this.allBuyers = [];
-      this.buyerVal = res;
-      console.log('All Bids Data', [this.buyerVal.value]);
-      for (let index = 0; index < this.buyerVal.value.length; index++) {
-        this.allBuyers.push({
-          bidAmount: this.buyerVal.value[index].bidAmount,
-          email: this.buyerVal.value[index].email,
-          phone: this.buyerVal.value[index].phone,
-          firstName: this.buyerVal.value[index].firstName,
-          lastName: this.buyerVal.value[index].lastName,
-        });
-      }
-    });
+    // this.buyer.getAllBids().subscribe((res) => {
+    //   this.allBuyers = [];
+    //   this.buyerVal = res;
+    //   console.log('All Bids Data', [this.buyerVal.value]);
+    //   for (let index = 0; index < this.buyerVal.value.length; index++) {
+    //     this.allBuyers.push({
+    //       bidAmount: this.buyerVal.value[index].bidAmount,
+    //       email: this.buyerVal.value[index].email,
+    //       phone: this.buyerVal.value[index].phone,
+    //       firstName: this.buyerVal.value[index].firstName,
+    //       lastName: this.buyerVal.value[index].lastName,
+    //     });
+    //   }
+    // });
   }
 
   ngOnInit(): void {}
@@ -125,8 +127,32 @@ export class DashboardComponent implements OnInit {
         Object.assign(this.sprod, this.singleRecord.result.value[0]);
         this.sprod.startingPrice =
           '$ ' + this.singleRecord.result.value[0].startingPrice;
-        console.log('Fetched Product By Id', [this.sprod]);
+        this.sprod.bidEndDate =
+          this.singleRecord.result.value[0].bidEndDate.split('T')[0];
       });
     }
+
+    this.buyer.getAllBidsByProductId(selectedProduct).subscribe((res) => {
+      this.allBuyers = [];
+      this.buyerVal = res;
+      console.log('All Bids for specific product', [
+        this.buyerVal.result.value.length,
+      ]);
+      if (this.buyerVal.result.value.length > 0) {
+        this.enableTable = true;
+      } else {
+        this.enableTable = false;
+      }
+      for (let index = 0; index < this.buyerVal.result.value.length; index++) {
+        this.allBuyers.push({
+          bidAmount: this.buyerVal.result.value[index].bidAmount,
+          email: this.buyerVal.result.value[index].email,
+          phone: this.buyerVal.result.value[index].phone,
+          firstName: this.buyerVal.result.value[index].firstName,
+          lastName: this.buyerVal.result.value[index].lastName,
+        });
+      }
+      console.log('All Bids Data', [this.allBuyers]);
+    });
   }
 }
