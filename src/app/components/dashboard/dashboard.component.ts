@@ -62,7 +62,7 @@ export class DashboardComponent implements OnInit {
 
   buyerVal: any;
 
-  p:any;
+  p: any;
 
   constructor(
     private seller: SellerServiceService,
@@ -123,6 +123,8 @@ export class DashboardComponent implements OnInit {
       this.seller.getProductById(selectedProduct).subscribe((res) => {
         this.singleRecord = res;
         Object.assign(this.sprod, this.singleRecord.result.value[0]);
+        this.sprod.startingPrice =
+          '$ ' + this.singleRecord.result.value[0].startingPrice;
         console.log('Fetched Product By Id', [this.sprod]);
       });
     }
