@@ -62,6 +62,8 @@ export class DashboardComponent implements OnInit {
 
   buyerVal: any;
 
+  p:any;
+
   constructor(
     private seller: SellerServiceService,
     private buyer: BuyerServiceService

@@ -21,9 +21,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent],
+  declarations: [AppComponent, DashboardComponent, PaginationComponent],
   imports: [
     BrowserModule,
     MdbAccordionModule,
@@ -44,6 +46,7 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

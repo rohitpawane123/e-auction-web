@@ -134,18 +134,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let buyer of allBuyers">
-                        <td>{{buyer.bidAmount}}</td>
-                        <td>{{buyer.firstName}} {{buyer.lastName}}</td>
-                        <td>{{buyer.email}}</td>
+                    <tr *ngFor="let buyer of allBuyers | paginate:{itemsPerPage:3, currentPage:p}">
+                        <td>$ {{buyer.bidAmount}}</td>
+                        <td>{{buyer.firstName | titlecase}} {{buyer.lastName | titlecase}}</td>
+                        <td>{{buyer.email | lowercase}}</td>
                         <td>{{buyer.phone}}</td>
                     </tr>
                 </tbody>
             </table>
-
-
-
-
+            <div class="pagination d-flex justify-content-md-end">
+                <pagination-controls (pageChange)="p= $event"></pagination-controls>
+            </div>
 
 
 
